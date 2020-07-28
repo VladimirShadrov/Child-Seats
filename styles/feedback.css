@@ -1,0 +1,77 @@
+.feedback__content-container {
+  padding: 20px 0;
+}
+
+.feedback__content-container {
+  position: relative;
+  background: url(../img/call-center.jpg) right / contain no-repeat;
+}
+
+.feedback__content-container::before {
+  content: '';
+  top: 0;
+  left: 0; 
+  bottom: 0;
+  right: 0;
+  display: block;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.feedback__content-container p {
+  font-size: 30px;
+  color: rgb(40, 40, 40);
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.feedback__phone {
+  text-align: center;
+  margin: 25px 0 30px 0;
+}
+
+
+.feedback__phone-number {
+  font-size: 200%;
+  text-decoration: none;
+  color: rgb(0, 0, 150);
+  transition: 0.3s;
+  z-index: 1;
+  position: relative;
+}
+
+.feedback__phone-number:hover {
+  color: rgb(195, 0, 0);
+}
+
+@media all and (max-width: 600px) {
+  .feedback__content-container p {
+    font-size: 20px;
+  }
+
+  .feedback__phone {
+    margin: 10px 0;
+  }
+
+  .feedback__phone-number {
+    font-size: 150%;
+    margin: 15px 0;
+  }
+}
+
+@media all and (max-width: 400px) {
+  .feedback__content-container p {
+    font-size: 16px;
+  }
+
+  .feedback__phone {
+    margin: 0;
+  }
+
+  .feedback__phone-number {
+    font-size: 100%;
+    margin: 0;
+  }
+
+}
