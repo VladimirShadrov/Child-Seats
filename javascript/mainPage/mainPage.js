@@ -2,7 +2,7 @@ const mainPage = document.querySelector('.main-page');
 
 // Отрисовка блока "Презентация" (левый и правый блоки)
 
-(function renderBlockPresentation() {
+function renderBlockPresentation() {
   const html = `
   <!--  Секция "Презентация"  -->
   <div class="presentation">
@@ -114,11 +114,13 @@ const mainPage = document.querySelector('.main-page');
   mainPage.insertAdjacentHTML('afterbegin', html)
 
 
-}());
+};
+
+renderBlockPresentation();
 
 // Отрисовка слайдера в блоке "Презентация"
 
-(function renderMainSlider() {
+function renderMainSlider() {
   const html = `
     <div class="presentation-slider">
       <div class="presentation-slider__img">
@@ -141,12 +143,13 @@ const mainPage = document.querySelector('.main-page');
 
   document.querySelector('.presentation__left-block').insertAdjacentHTML('afterbegin', html);
 
-}());
+};
 
+renderMainSlider();
 
 // Отрисовка секции "Товары"
 
-(function renderSectionProducts() {
+function renderSectionProducts() {
   const html = `
   <!--  Секция "Товары"  -->
   <section class="products">
@@ -172,7 +175,7 @@ const mainPage = document.querySelector('.main-page');
 
         <div class="products__item">
           <div class="products__item-img">
-            <img src="img/products/recaro.jpg" alt="recaro">
+            <img src="img/products/recaro.jpg" alt="recaro" data-name="recaro">
           </div>
           <div class="products__item-description">
             <h3>RECARO</h3>
@@ -186,14 +189,14 @@ const mainPage = document.querySelector('.main-page');
           </div>
           <div class="products__border"></div>
           <div class="products__item-btn">
-            <button>Смотреть в каталоге</button>
+            <button data-name="recaro">Смотреть в каталоге</button>
           </div>
         </div>
 
 
         <div class="products__item">
           <div class="products__item-img">
-            <img src="img/products/britax_romer.jpg" alt="recaro">
+            <img src="img/products/britax_romer.jpg" alt="romer" data-name="romer">
           </div>
           <div class="products__item-description">
             <h3 style="text-transform: uppercase;">Britax Römer</h3>
@@ -206,14 +209,14 @@ const mainPage = document.querySelector('.main-page');
           </div>
           <div class="products__border"></div>
           <div class="products__item-btn">
-            <button>Смотреть в каталоге</button>
+            <button data-name="romer">Смотреть в каталоге</button>
           </div>
         </div>
 
 
         <div class="products__item">
           <div class="products__item-img">
-            <img src="img/products/sybex.jpg" alt="recaro">
+            <img src="img/products/sybex.jpg" alt="cybex" data-name="cybex">
           </div>
           <div class="products__item-description">
             <h3>CYBEX</h3>
@@ -226,14 +229,14 @@ const mainPage = document.querySelector('.main-page');
           </div>
           <div class="products__border"></div>
           <div class="products__item-btn">
-            <button>Смотреть в каталоге</button>
+            <button data-name="cybex">Смотреть в каталоге</button>
           </div>
         </div>
 
 
         <div class="products__item">
           <div class="products__item-img">
-            <img src="img/products/heyner.jpg" alt="recaro">
+            <img src="img/products/heyner.jpg" alt="heyner" data-name="heyner">
           </div>
           <div class="products__item-description">
             <h3>HEYNER</h3>
@@ -246,7 +249,7 @@ const mainPage = document.querySelector('.main-page');
           </div>
           <div class="products__border"></div>
           <div class="products__item-btn">
-            <button>Смотреть в каталоге</button>
+            <button data-name="heyner">Смотреть в каталоге</button>
           </div>
         </div>
       </div>
@@ -258,5 +261,7 @@ const mainPage = document.querySelector('.main-page');
 
   mainPage.insertAdjacentHTML('beforeend', html);
 
-}());
+};
+
+renderSectionProducts();
 
