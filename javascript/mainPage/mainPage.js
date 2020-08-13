@@ -11,6 +11,7 @@ function renderBlockPresentation() {
       <!--  Секция "Презентация" - левый блок  -->
 
       <div class="presentation__left-block">
+        <div class="presentation-slider__container"></div>
       </div>
 
       <!--  // Секция "Презентация" - левый блок  -->
@@ -117,35 +118,6 @@ function renderBlockPresentation() {
 };
 
 renderBlockPresentation();
-
-// Отрисовка слайдера в блоке "Презентация"
-
-function renderMainSlider() {
-  const html = `
-    <div class="presentation-slider">
-      <div class="presentation-slider__img">
-        <img src="img/presentation-slider/sybex.jpg" alt="sybex">
-      </div>
-      <div class="presentation-slider__title">
-        <button class="presentation-slider__btn" data-name="sybex">Sybex</button>
-        <p class="presentation-slider__description">
-          Автокресло с рождения до 3-4 лет
-        </p>
-      </div>
-      <div class="presentation-slider__price-wrapper">
-        <div class="presentation-slider__price">
-          <span>7 500 руб.</span>
-        </div>
-        <div class="presentation-slider__romb"></div>
-      </div>
-    </div>
-  `
-
-  document.querySelector('.presentation__left-block').insertAdjacentHTML('afterbegin', html);
-
-};
-
-renderMainSlider();
 
 // Отрисовка секции "Товары"
 

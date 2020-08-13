@@ -5,6 +5,17 @@ function renderProductsCatalog() {
   const html = `
   <div class="catalog__content">
 
+  <nav>
+    <ul class="menu">
+      <li class="menu__item">
+        <a href="#" data-name="mainPage">Главная</a>
+      </li>
+      <li class="menu__item">
+        <a href="#">Каталог</a>
+      </li>
+    </ul>
+  </nav>
+
     <section class="catalog__title">
       <h2>Каталог товаров</h2>
       <p style="text-align: justify;">

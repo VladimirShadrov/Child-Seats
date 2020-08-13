@@ -2,6 +2,47 @@
   padding: 120px 0 0 0;
 }
 
+.menu {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.menu__item {
+  list-style: none;
+  margin-right: 10px;
+}
+
+.menu__item a {
+  color: rgb(60, 60, 60);
+  text-decoration: none;
+  border-bottom: 1px solid rgb(120, 120, 120);
+  font-weight: bold;
+}
+
+.menu__item:last-child a {
+  border: none;
+  cursor: text;
+  color: rgb(160, 160, 160);
+}
+
+.menu__item:last-child {
+  border: none;
+  cursor: text;
+  margin-right: 0;
+}
+
+.menu__item::after {
+  content: '>';
+  margin-left: 10px;
+  cursor: text;
+}
+
+.menu__item:last-child::after {
+  content: '';
+}
+
 .catalog__title {
   padding: 20px 0;
 }

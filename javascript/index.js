@@ -59,7 +59,7 @@ const recaro = [
     brand: 'Recaro',
     id: 'recaro3',
     model: 'Recaro Privia',
-    price: ' 16 200',
+    price: '16 200',
     forWho: 'Автолюлька до 1 года',
     production: 'Recaro/Германия',
     group: '0+ (до 13 кг)',

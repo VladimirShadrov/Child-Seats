@@ -36,9 +36,25 @@
   padding: 5px;
 }
 
-.presentation-slider {
+.presentation-slider__container {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
   height: 100%;
+}
+
+.presentation-slider {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   background-color: rgba(255, 255, 255, 1);
+  transition: 0.5s;
+}
+
+.presentation-slider.active {
+  transform: translateY(calc(100% + 5px));
 }
 
 .presentation-slider__img {
@@ -90,6 +106,7 @@
   position: relative;
   padding: 10px 30px;
   width: 250px;
+  margin-left: 10px;
 }
 
 .presentation-slider__price span {

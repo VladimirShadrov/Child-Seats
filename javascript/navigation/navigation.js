@@ -80,5 +80,16 @@ document.querySelectorAll('.products__item').forEach(item => {
   });
 });
 
+// Навигация между страницами при клике по элементам меню 
+
+document.querySelector('.menu').addEventListener('click', function(event) {
+  event.preventDefault();
+
+  if (event.target.tagName.toLowerCase() === 'a' && event.target.dataset.name) {
+    currentPage = setCurrentPage(event.target.dataset.name);
+    showCurrentPage(currentPage);
+  };
+});
+
 
 
