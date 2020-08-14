@@ -7,11 +7,13 @@
   justify-content: flex-start;
   align-items: center;
   margin-top: 30px;
+  flex-wrap: wrap;
 }
 
 .menu__item {
   list-style: none;
   margin-right: 10px;
+  margin-bottom: 5px;
 }
 
 .menu__item a {

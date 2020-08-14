@@ -16,7 +16,8 @@
 .products__content,
 .feedback__content,
 .footer__content,
-.catalog__content {
+.catalog__content,
+.product-card__content {
   max-width: 93vw;
   margin: 0 auto;
 }
