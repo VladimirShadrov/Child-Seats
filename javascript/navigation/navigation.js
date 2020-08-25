@@ -5,12 +5,25 @@ function showCurrentPage(page) {
     case 'mainPage': {
       catalog.classList.add('hide');
       mainPage.classList.remove('hide');
+      productCart.classList.add('hide');
       break;
     }
     case 'catalog': {
       catalog.classList.remove('hide');
       mainPage.classList.add('hide');
+      productCart.classList.add('hide');
       break;
+    }
+    default: {
+      catalog.classList.add('hide');
+      mainPage.classList.add('hide');
+      productCart.classList.remove('hide');
+      let product = JSON.parse(sessionStorage.getItem('product'));
+      document.querySelector('.product-card-items__wrapper').innerHTML = '';
+      renderProductPage(product);
+      renderProductSlider(product.sliderImg);
+      let link = document.querySelectorAll('.menu .menu__item a')
+      link[4].textContent = product.model;
     }
   }
 };
@@ -82,14 +95,41 @@ document.querySelectorAll('.products__item').forEach(item => {
 
 // Навигация между страницами при клике по элементам меню 
 
-document.querySelector('.menu').addEventListener('click', function(event) {
-  event.preventDefault();
+menu.forEach(item => {
+  item.addEventListener('click', function (event) {
+    event.preventDefault();
 
-  if (event.target.tagName.toLowerCase() === 'a' && event.target.dataset.name) {
-    currentPage = setCurrentPage(event.target.dataset.name);
+    if (event.target.tagName.toLowerCase() === 'a' && event.target.dataset.name) {
+      currentPage = setCurrentPage(event.target.dataset.name);
+      showCurrentPage(currentPage);
+    };
+
+  });
+});
+
+
+// Отрисовка раздела с описанием товара при клике на карточке товара в разделе "Каталог"
+
+const catalogList = recaro.concat(romer, cybex, heyner);
+
+catalog.addEventListener('click', function (event) {
+  let item
+  if (event.target.closest('.catalog__item-container') && event.target.closest('.catalog__item-container').dataset.id) {
+    let target = event.target.closest('.catalog__item-container');
+    let id = target.dataset.id;
+    item = catalogList.find(i => i.id === id);
+    sessionStorage.setItem('product', JSON.stringify(item));
+    window.scrollTo(0, 0);
+    currentPage = setCurrentPage('productCart');
     showCurrentPage(currentPage);
   };
 });
+
+
+
+presentationSliderContainer.addEventListener('click', e => {
+  console.log(e.target.dataset.id)
+})
 
 
 

@@ -1,3 +1,6 @@
+.product-card {
+  padding-top: 120px;
+}
 
 .product-card__container {
   display: flex;

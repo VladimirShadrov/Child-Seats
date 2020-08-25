@@ -41,7 +41,7 @@ function renderMainSlider() {
             <img src="${item.img}">
           </div>
           <div class="presentation-slider__title">
-            <button class="presentation-slider__btn" data-name="sybex">${item.model}</button>
+            <button class="presentation-slider__btn" data-id="${item.id}">${item.model}</button>
             <p class="presentation-slider__description">
               ${item.description}
             </p>

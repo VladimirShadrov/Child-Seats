@@ -3,20 +3,7 @@ const catalog = document.querySelector('.catalog');
 
 function renderProductsCatalog() {
   const html = `
-  <div class="catalog__content">
-
-  <nav>
-    <ul class="menu">
-      <li class="menu__item">
-        <a href="#" data-name="mainPage">Главная</a>
-      </li>
-      <li class="menu__item">
-        <a href="#">Каталог</a>
-      </li>
-    </ul>
-  </nav>
-
-    <section class="catalog__title">
+      <section class="catalog__title">
       <h2>Каталог товаров</h2>
       <p style="text-align: justify;">
         В нашем магазине предлагаются детские автоокресла ведущих мировых производителей, тщательно подобранные из
@@ -41,10 +28,8 @@ function renderProductsCatalog() {
         <h4 data-name="heyner">HEYNER</h4>
       </div>
     </div>
-
-  </div>
   `
-  catalog.insertAdjacentHTML('afterbegin', html);
+  document.querySelector('.catalog__content').insertAdjacentHTML('beforeend', html);
 };
 
 renderProductsCatalog();

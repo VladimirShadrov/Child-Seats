@@ -22,7 +22,7 @@ function renderCatalogItems(itemsList) {
   let html
   itemsList.forEach(item => {
     html = `
-    <div class="catalog__item-container">
+    <div class="catalog__item-container" data-id="${item.id}">
       <div class="catalog__item">
         <div class="catalog__item-img">
           <img src="${item.img}" alt="recaro">
