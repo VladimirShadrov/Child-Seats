@@ -106,12 +106,12 @@ function renderProductPage(brandItem) {
 
 // Отрисовка элементов слайдера в блоке с карточкой товара
 
-function renderProductSlider(slides) {
+function renderProductSlider(slides, product) {
   let html
   slides.forEach(slide => {
     html = `
     <div class="product-card__slider-item">
-      <img src="${slide}" alt="">
+      <img src="${slide}" alt="slide" data-id="${product.id}">
     </div>    
     `
     document.querySelector('.product-card__slider-band').insertAdjacentHTML('afterbegin', html);

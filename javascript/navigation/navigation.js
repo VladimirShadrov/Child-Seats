@@ -21,7 +21,7 @@ function showCurrentPage(page) {
       let product = JSON.parse(sessionStorage.getItem('product'));
       document.querySelector('.product-card-items__wrapper').innerHTML = '';
       renderProductPage(product);
-      renderProductSlider(product.sliderImg);
+      renderProductSlider(product.sliderImg, product);
       let link = document.querySelectorAll('.menu .menu__item a')
       link[4].textContent = product.model;
     }
@@ -110,8 +110,6 @@ menu.forEach(item => {
 
 // Отрисовка раздела с описанием товара при клике на карточке товара в разделе "Каталог"
 
-const catalogList = recaro.concat(romer, cybex, heyner);
-
 catalog.addEventListener('click', function (event) {
   let item
   if (event.target.closest('.catalog__item-container') && event.target.closest('.catalog__item-container').dataset.id) {
@@ -127,9 +125,6 @@ catalog.addEventListener('click', function (event) {
 
 
 
-presentationSliderContainer.addEventListener('click', e => {
-  console.log(e.target.dataset.id)
-})
 
 
 

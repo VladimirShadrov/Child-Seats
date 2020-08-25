@@ -124,6 +124,7 @@
 .product-card__slider-band {
   display: flex;
   width: 200%;
+  transition: 0.3s;
 }
 
 .product-card__slider-item {
