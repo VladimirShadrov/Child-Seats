@@ -6,7 +6,7 @@ function renderProductPage(brandItem) {
       <div class="product-card__container">
         <div class="product-card__item">
           <div class="product-card__img">
-            <img src="${brandItem.img}" alt="recaro">
+            <img src="${brandItem.img}" alt="photo" data-name="main-photo">
         </div>
             <div class="product-card__slider-wrapper">
               <div class="product-card__slider-container">

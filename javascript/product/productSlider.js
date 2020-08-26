@@ -22,7 +22,11 @@ productItemsContainer.addEventListener('click', function (event) {
     changeMainImage(linkSelectidImage, slideImages, imageContainer);
   }
 
-
+  if (event.target.dataset.name === 'main-photo' || event.target.closest('.product-card__img')) {
+    modal.create();
+    modal.insertPhotos();
+    modal.open();
+  }
 });
 
 // Передвинуть элементы слайдера влево (показать следующий слайд)

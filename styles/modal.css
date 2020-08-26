@@ -1,0 +1,139 @@
+.modal__overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  height: 100vh;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  opacity: 0;
+  transition: 0.6s;
+}
+
+.modal__overlay.active {
+  opacity: 1;
+}
+
+.modal__window {
+  background-color: rgb(255, 255, 255);
+  position: relative;
+  padding: 15px;
+  border-radius: 10px;
+  width: 600px;
+  height: 600px;
+  transform: perspective(900px) translateY(-100%) rotateX(45deg);
+  opacity: 0;
+  transition: 0.6s;
+}
+
+.modal__window.active {
+  transform: none;
+  opacity: 1;
+}
+
+.modal__window-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: url(../img/close.png) center/cover no-repeat;
+  z-index: 1;
+  transition: 0.5s;
+}
+
+.modal__window-close:hover {
+  transform: rotate(180deg);
+}
+
+.modal__window-img {
+  position: relative;
+}
+
+.modal__window-img img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.modal__window-img img.active {
+  opacity: 1;
+}
+
+.modal__window-btn-container {
+  position: absolute;
+  top: calc(50% - 40px);
+  left: 15px;
+  right: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal__window-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.modal__window-btn:hover {
+  background-color: rgba(90, 90, 90, 0.5);
+}
+
+.modal__window-btn:active {
+  background-color: rgba(90, 90, 90, 0.3);
+}
+
+.modal__window-btn img {
+  width: 100%;
+  height: 100%; 
+}
+
+@media all and (max-width: 650px) {
+  .modal__window {
+    width: 550px;
+    height: 550px;
+  }
+}
+
+@media all and (max-width: 600px) {
+  .modal__window {
+    width: 500px;
+    height: 500px;
+  }
+}
+
+@media all and (max-width: 550px) {
+  .modal__window {
+    width: 450px;
+    height: 450px;
+  }
+}
+
+@media all and (max-width: 450px) {
+  .modal__window {
+    width: 350px;
+    height: 350px;
+  }
+}
+
+@media all and (max-width: 350px) {
+  .modal__window {
+    width: 300px;
+    height: 300px;
+  }
+}

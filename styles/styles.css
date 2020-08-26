@@ -5,6 +5,7 @@
 @import url(footer.css);
 @import url(catalog.css);
 @import url(productCard.css);
+@import url(modal.css);
 
 * {
   margin: 0;
