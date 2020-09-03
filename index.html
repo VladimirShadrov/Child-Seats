@@ -47,7 +47,7 @@
         </div>
         <div class="header-bascket">
           <div class="header-bascket-img" style="background: url(img/shoppingBascket.png) center / cover;">
-            <span class="header-bascket_counter ">5</span>
+            <span class="header-bascket_counter hide">1</span>
           </div>
         </div>
       </div>
@@ -60,13 +60,13 @@
 
   <!--  Секция "Главная страница"  -->
 
-  <div class="main-page "></div>
+  <div class="main-page hide"></div>
 
   <!-- _________________________________________________________________________________________ -->
 
   <!--  Блок "Каталог товаров"  -->
 
-  <div class="catalog ">
+  <div class="catalog hide">
     <div class="catalog__content">
       <nav>
         <ul class="menu">
@@ -85,8 +85,8 @@
 
   <!-- Блок "Кароточка товаров" -->
 
-  <div class="product-card">
-    <section class="product-card__content">
+  <div class="product-card hide">
+    <div class="product-card__content">
       <nav style="margin-bottom: 10px">
         <ul class="menu">
           <li class="menu__item">
@@ -101,9 +101,35 @@
         </ul>
       </nav>
       <div class="product-card-items__wrapper"></div>
-    </section>
+    </div>
   </div>
 
+
+  <!-- _________________________________________________________________________________________ -->
+
+  <!-- Блок "Корзина" -->
+
+  <div class="product-cart hide">
+    <div class="product-cart__content">
+      <nav style="margin-bottom: 10px">
+        <ul class="menu">
+          <li class="menu__item">
+            <a href="#" data-name="mainPage">Главная</a>
+          </li>
+          <li class="menu__item">
+            <a href="#" data-name="catalog">Каталог</a>
+          </li>
+          <li class="menu__item">
+            <a href="#">Ваша корзина</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="product-cart__title">
+        <h2>Оформление заказа</h2>
+      </div>
+      <div class="product-cart__wrapper"></div>
+    </div>
+  </div>
 
   <!-- _________________________________________________________________________________________ -->
 
@@ -127,23 +153,7 @@
 
   <div class="modal hide">
     <div class="modal__overlay">
-      <div class="modal__window">
-        <!-- <div class="modal__window-close"></div>
-        <div class="modal__window-img">
-          <img src="img/catalog/recaro/Monza-Nova/1.jpg" alt="image">
-          <img src="img/catalog/recaro/Monza-Nova/2.jpg" alt="image">
-          <img src="img/catalog/recaro/Monza-Nova/3.jpg" alt="image">
-          <img src="img/catalog/recaro/Monza-Nova/4.jpg" alt="image">
-        </div>
-        <div class="modal__window-btn-container">
-          <button class="modal__window-btn" data-name="btn-prev">
-            <img src="img/arrow_back.png" alt="back">
-          </button>
-          <button class="modal__window-btn" data-name="btn-next">
-            <img src="img/arrow_next.png" alt="">
-          </button>
-        </div> -->
-      </div>
+      <div class="modal__window"></div>
     </div>
   </div>
 
@@ -329,6 +339,8 @@
   <script src="javascript/catalog/catalog.js"></script>
   <script src="javascript/catalog/tabs.js"></script>
   <script src="javascript/product/productCart.js"></script>
+  <script src="javascript/productCart/htmlForShoppingCart.js"></script>
+  <script src="javascript/productCart/shoppingCart.js"></script>
   <script src="javascript/navigation/navigation.js"></script>
   <script src="javascript/product/modal.js"></script>
   <script src="javascript/product/productSlider.js"></script>

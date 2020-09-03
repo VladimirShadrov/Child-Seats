@@ -34,7 +34,7 @@ function renderCatalogItems(itemsList) {
         <div class="catalog__item-description">
           <span>${item.forWho}</span>
         </div>
-        <button class="catalog__item-buy">Купить</button>
+        <button class="catalog__item-buy" data-id="${item.id}">Купить</button>
       </div>
       <div class="catalog__item-top-bar">
         <h4 style="color: rgb(0, 255, 0); text-align: center; margin: 7px 0;">Товар в наличии</h4>

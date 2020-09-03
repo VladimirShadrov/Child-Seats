@@ -6,24 +6,44 @@ function showCurrentPage(page) {
       catalog.classList.add('hide');
       mainPage.classList.remove('hide');
       productCart.classList.add('hide');
+      shoppingCart.classList.add('hide');
       break;
     }
     case 'catalog': {
       catalog.classList.remove('hide');
       mainPage.classList.add('hide');
       productCart.classList.add('hide');
+      shoppingCart.classList.add('hide');
       break;
     }
-    default: {
+    case 'productCart': {
       catalog.classList.add('hide');
       mainPage.classList.add('hide');
       productCart.classList.remove('hide');
+      shoppingCart.classList.add('hide');
       let product = JSON.parse(sessionStorage.getItem('product'));
       document.querySelector('.product-card-items__wrapper').innerHTML = '';
       renderProductPage(product);
       renderProductSlider(product.sliderImg, product);
       let link = document.querySelectorAll('.menu .menu__item a')
       link[4].textContent = product.model;
+      break
+    }
+    case 'thankYou': {
+      catalog.classList.add('hide');
+      mainPage.classList.add('hide');
+      productCart.classList.add('hide');
+      shoppingCart.classList.remove('hide');
+      sayThankYouForPurchase();
+      break
+    }
+    default: {
+      catalog.classList.add('hide');
+      mainPage.classList.add('hide');
+      productCart.classList.add('hide');
+      shoppingCart.classList.remove('hide');
+      let currentLSGoods = goodsFromLS(); // Актуальный массив с заказаными товарами
+      drawCorrectPageShoppingCart(currentLSGoods)    
     }
   }
 };
@@ -112,7 +132,7 @@ menu.forEach(item => {
 
 catalog.addEventListener('click', function (event) {
   let item
-  if (event.target.closest('.catalog__item-container') && event.target.closest('.catalog__item-container').dataset.id) {
+  if (event.target.closest('.catalog__item-container') && event.target.closest('.catalog__item-container').dataset.id && !event.target.classList.contains('catalog__item-buy')) {
     let target = event.target.closest('.catalog__item-container');
     let id = target.dataset.id;
     item = catalogList.find(i => i.id === id);

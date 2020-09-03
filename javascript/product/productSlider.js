@@ -11,11 +11,11 @@ productItemsContainer.addEventListener('click', function (event) {
 
   if (event.target.closest('button') && event.target.dataset.name === 'next') {
     moveSliderToLeft(sliderRow, sliderItemWidth, activeButton, slides);
-  };
+  }
 
   if (event.target.closest('button') && event.target.dataset.name === 'prev') {
     moveSliderToRight(sliderRow, sliderItemWidth, activeButton, slides);
-  };
+  }
 
   if (event.target.tagName.toLowerCase() === 'img' && event.target.closest('.product-card__slider-item')) {
     let linkSelectidImage = event.target.getAttribute('src')

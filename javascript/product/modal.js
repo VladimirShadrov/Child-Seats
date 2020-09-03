@@ -2,6 +2,7 @@ const modal = modalWindow();
 const modalWindowParent = document.querySelector('.modal__window');
 const modalOverlay = document.querySelector('.modal__overlay');
 const modalContainer = document.querySelector('.modal');
+let counter = 0;
 
 function modalWindow() {
 
@@ -56,7 +57,6 @@ function modalWindow() {
   }
 };
 
-let counter = 0;
 
 modalContainer.addEventListener('click', event => {
   let images = Array.from(modalWindowParent.querySelectorAll('.modal__window-img img'));
@@ -78,7 +78,7 @@ modalContainer.addEventListener('click', event => {
   if (event.target.dataset.name === 'prev-slide') {
     --counter;
     if (counter < 0) {
-      counter = images.length-1
+      counter = images.length-1;
     };
     modal.nextSlide(counter, images);
   }

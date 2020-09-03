@@ -6,6 +6,13 @@ const productCart = document.querySelector('.product-card');
 const productCartContent = document.querySelector('.product-card__content');
 const menu = document.querySelectorAll('.menu');
 const productItemsContainer = document.querySelector('.product-card-items__wrapper');
+const shoppingCart = document.querySelector('.product-cart');
+let goods = JSON.parse(localStorage.getItem('goods')) || [];
+const header = document.querySelector('.header');
+const headerSoppingCartImg = document.querySelector('.header-bascket');
+let productCounter = document.querySelector('.header-bascket_counter ');
+const shoppingCartImage = document.querySelector('.header-bascket-img');
+const shoppingCartWrapper = document.querySelector('.product-cart__wrapper');
 
 
 

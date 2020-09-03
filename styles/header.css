@@ -17,7 +17,8 @@
 .feedback__content,
 .footer__content,
 .catalog__content,
-.product-card__content {
+.product-card__content,
+.product-cart__content {
   max-width: 93vw;
   margin: 0 auto;
 }
@@ -96,7 +97,18 @@ a.social {
 }
 
 .header-bascket_counter {
-  display: none;
+  color: rgb(255, 255, 255);
+  position: absolute;
+  top: -10px;
+  left: -20px;
+  display: block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: rgb(210, 0, 0);
+  text-align: center;
+  padding-top: 3px;
+  font-weight: bold;
 }
 
 .header-bascket_counter.active {

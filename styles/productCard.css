@@ -238,6 +238,10 @@
 }
 
 @media all and (max-width: 650px) {
+  .product-card {
+    padding-top: 180px;
+  }
+
   .product-card__slider-band {
     width: 300%;
   }

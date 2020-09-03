@@ -6,6 +6,7 @@
 @import url(catalog.css);
 @import url(productCard.css);
 @import url(modal.css);
+@import url(shopping-cart.css);
 
 * {
   margin: 0;
