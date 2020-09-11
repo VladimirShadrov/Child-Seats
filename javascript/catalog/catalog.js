@@ -29,7 +29,7 @@ function renderCatalogItems(itemsList) {
         </div>
         <h4>${item.model}</h4>
         <div class="catalog__item-price">
-          <span>${item.price} &#8381;</span>
+          <span>${item.price.toLocaleString()} &#8381;</span>
         </div>
         <div class="catalog__item-description">
           <span>${item.forWho}</span>

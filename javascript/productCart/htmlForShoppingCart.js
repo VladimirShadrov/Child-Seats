@@ -30,7 +30,7 @@ function addShoppingCartItems(arr) {
   const itemsContainer = document.querySelector('.product-cart__product-wrapper');
   arr.forEach(item => {
     html = `
-    <div class="product-cart__product-container">
+    <div class="product-cart__product-container" data-id="${item.id}">
       <div class="product-cart__block">
         <div class="product-cart__product-img">
           <img src="${item.img}" alt="image">
@@ -42,18 +42,18 @@ function addShoppingCartItems(arr) {
       </div>
       <div class="product-cart__block">
         <div class="product-cart__block-count-container">
-          <div class="product-cart__block-count-item" data-sign="minus"></div>
-          <div class="product-cart__block-count-item product-cart__block-count-item-value">1</div>
-          <div class="product-cart__block-count-item" data-sign="plus"></div>
+          <div class="product-cart__block-count-item" data-sign="minus" data-id="${item.id}"></div>
+          <div class="product-cart__block-count-item product-cart__block-count-item-value">${item.value || 1}</div>
+          <div class="product-cart__block-count-item" data-sign="plus" data-id="${item.id}"></div>
         </div>
         <div class="product-cart__block-price">
           <div class="product-cart__block-price-cross"></div>
-          <span class="product-cart__block-price-value">${item.price}</span>
+          <span class="product-cart__block-price-value">${item.price.toLocaleString()}</span>
           <span class="product-cart__block-price-currency">&#8381;</span>
         </div>
       </div>
       <div class="product-cart__delete">
-        <i class="fa fa-trash" aria-hidden="true" style="font-size: 30px;"></i>
+        <i class="fa fa-trash" aria-hidden="true" style="font-size: 30px;" data-id="${item.id}"></i>
       </div>
     </div>
   `
@@ -94,9 +94,3 @@ function thankForPurchase() {
   `;
   shoppingCartWrapper.insertAdjacentHTML('afterbegin', html);
 };
-
-// Очистка блока "Ваша корзина"
-
-function clearShoppingCartBlock() {
-  shoppingCartWrapper.innerHTML = '';
-}

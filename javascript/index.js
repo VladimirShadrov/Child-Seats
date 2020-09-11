@@ -568,4 +568,12 @@ const heyner = [
 ];
 
 const catalogList = recaro.concat(romer, cybex, heyner);
+catalogList.forEach(item => item.value = 1);
 
+catalogList.forEach(item => {
+  let whiteSpaceIndex = item.price.indexOf(' ');
+  let newPrice = parseFloat( item.price.slice(0, whiteSpaceIndex) + item.price.slice(whiteSpaceIndex + 1, item.price.length) );
+  item.price = newPrice;
+});
+
+sessionStorage.setItem('catalogList', JSON.stringify(catalogList));

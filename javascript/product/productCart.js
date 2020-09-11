@@ -51,7 +51,7 @@ function renderProductPage(brandItem) {
                   </div>
                 </div>
                 <div class="product-card__price-container">
-                  <div class="product-card__price">${brandItem.price} &#8381;</div>
+                  <div class="product-card__price">${brandItem.price.toLocaleString()} &#8381;</div>
                   <button class="product-card__btn" data-id="${brandItem.id}">КУПИТЬ</button>
                 </div>
               </div>
