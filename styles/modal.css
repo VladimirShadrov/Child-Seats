@@ -32,7 +32,7 @@
 }
 
 .modal__window.active {
-  transform: none;
+  transform: perspective(900px) translateY(0) rotateX(0);
   opacity: 1;
 }
 

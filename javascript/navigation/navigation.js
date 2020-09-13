@@ -77,9 +77,7 @@ function renderCatalogPage(page, tab) {
 };
 
 
-
 // Переход в соответствующий раздел каталога при клике на эмблему бренда в подвале сайта
-
 footerBrands.addEventListener('click', function (event) {
   event.preventDefault();
   let tab = event.target.closest('a').dataset.name;
@@ -88,7 +86,6 @@ footerBrands.addEventListener('click', function (event) {
 });
 
 // Возврат на главную страницу при клике на логотип
-
 logo.addEventListener('click', function () {
   window.scrollTo(0, 0);
 
@@ -96,14 +93,23 @@ logo.addEventListener('click', function () {
   showCurrentPage(currentPage);
 });
 
-// Переход в каталог при клике на кнопку "Перейти в каталог" на главной странице.
+// Переход в раздел "Карточка товара" при клике по кнопке с названием товара в слайдере на главной странице
+mainPage.addEventListener('click', function(event) {
+  if (event.target.tagName.toLowerCase() === 'button' && event.target.classList.contains('presentation-slider__btn')) {
+    const currentProduct = catalogList.find(item => item.id === event.target.dataset.id);
+    sessionStorage.setItem('product', JSON.stringify(currentProduct));
+    window.scrollTo(0, 0);
+    currentPage = setCurrentPage('productCart');
+    showCurrentPage(currentPage);
+  }
+});
 
+// Переход в каталог при клике на кнопку "Перейти в каталог" на главной странице.
 document.querySelector('.why-us__btn').addEventListener('click', function () {
   renderCatalogPage('catalog', 'recaro');
 });
 
 // Переход на нужный элемент каталога при клике по карточке товара с маркой кресла на главной странице.
-
 document.querySelectorAll('.products__item').forEach(item => {
   item.addEventListener('click', function (event) {
     if (event.target.dataset.name) {
@@ -114,7 +120,6 @@ document.querySelectorAll('.products__item').forEach(item => {
 });
 
 // Навигация между страницами при клике по элементам меню 
-
 menu.forEach(item => {
   item.addEventListener('click', function (event) {
     event.preventDefault();
@@ -129,7 +134,6 @@ menu.forEach(item => {
 
 
 // Отрисовка раздела с описанием товара при клике на карточке товара в разделе "Каталог"
-
 catalog.addEventListener('click', function (event) {
   let item
   if (event.target.closest('.catalog__item-container') && event.target.closest('.catalog__item-container').dataset.id && !event.target.classList.contains('catalog__item-buy')) {
